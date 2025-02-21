@@ -1,0 +1,120 @@
+
+  
+  body{
+background-image: url('https://w0.peakpx.com/wallpaper/475/750/HD-wallpaper-joker-card-batman-the-joker-theme.jpg');
+background-size:auto;
+background-attachment:local;
+background-position: center;
+background-repeat: no-repeat;
+
+    background-color: black;
+    
+}
+@keyframes glitch {
+    0% { text-shadow: 2px 2px wheat, -2px -2px whitesmoke; }
+    50% { text-shadow: -2px -2px white, 2px 2px white ; }
+    100% { text-shadow: 2px -2px white, -2px 2px white; }
+}
+
+.glitch {
+    text-align: center;
+    animation: glitch 1.8s infinite alternate;
+    margin: 5px;
+}
+.glitch2{
+    animation: glitch 0.9s infinite alternate;
+    color:#9257ff;
+    margin-bottom: 0;
+}
+table{
+ 
+    color:whitesmoke;
+    position:relative;
+}
+h1,  h3, h4 {
+    color: #00A86B;
+}
+h2{
+    text-align: center;
+    color:#0dcf42;
+    font-size: 50px;
+}
+h3 {
+    font-size: 50px;
+    color: #911e2b;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: 30%;
+
+    margin: 0 auto 10px ;
+   
+}
+/* Clearfix to clear floats */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both; /* Clear both left and right floats */
+}
+.face{
+    z-index: -1;
+    display: block;
+    width: 150px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    border-radius: 30px;
+    background-color: #800080; /* Purple background */
+    color: white; /* White text */
+    border: 2px solid #00A86B; /* Green border */
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.1s ease-in-out, transform 0.1s;
+    font-family: "Eater", serif;
+    
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #00a86abf; /* Green on hover */
+    color:#f2d8ff; /* Optional: change text color on hover */
+    transform: scale(1.05); /* Slight pop effect */
+    font-size: 15px;
+}
+
+  .left{
+   
+    float: left;
+  }
+
+  .right{
+   
+    float: right;
+   
+  }
+  p{
+    color: white;
+    text-align: center;
+  }
+  .sign { 
+    color: #911e2b;
+    font-family: "Cedarville Cursive", serif;
+    font-weight: 400;
+    font-size: 120px;
+    text-align: center;
+    margin-top: 0%;
+  }
+  .sig{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  footer{
+    margin-top: 150px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }

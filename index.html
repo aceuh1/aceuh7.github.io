@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+	<TITLE>Eliza (elizabot.js)</TITLE>
+
+	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot.js"></SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizadata.js"></SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+  
+<!--
+
+var eliza = new ElizaBot();
+var elizaLines = new Array();
+
+var displayCols = 60;
+var displayRows = 20;
+
+function elizaReset() {
+	eliza.reset();
+	elizaLines.length = 0;
+	elizaStep();
+}
+
+function elizaStep() {
+	var f = document.forms.e_form;
+	var userinput = f.e_input.value;
+	if (eliza.quit) {
+		f.e_input.value = '';
+		if (confirm("This session is over.\nStart over?")) elizaReset();
+		f.e_input.focus();
+		return;
+	}
+	else if (userinput != '') {
+		var usr = 'YOU:   ' + userinput;
+		var rpl ='ELIZA: ' + eliza.transform(userinput);
+		elizaLines.push(usr);
+		elizaLines.push(rpl);
+		// display nicely
+		// (fit to textarea with last line free - reserved for extra line caused by word wrap)
+		var temp  = new Array();
+		var l = 0;
+		for (var i=elizaLines.length-1; i>=0; i--) {
+			l += 1 + Math.floor(elizaLines[i].length/displayCols);
+			if (l >= displayRows) break
+			else temp.push(elizaLines[i]);
+		}
+		elizaLines = temp.reverse();
+		f.e_display.value = elizaLines.join('\n');
+	}
+	else if (elizaLines.length == 0) {
+		// no input and no saved lines -> output initial
+		var initial = 'Dr. Joker: ' + eliza.getInitial();
+		elizaLines.push(initial);
+		f.e_display.value = initial + '\n';
+	}
+	f.e_input.value = '';
+	f.e_input.focus();
+}
+
+//-->
+</SCRIPT>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Eater&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</HEAD>
+
+<BODY TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0" STYLE="border:0" onload="window.setTimeout('elizaReset()',100)"><A NAME="top"></A>
+  <br> <br> 
+  
+  
+
+<P>&nbsp;</P>
+<img class="left" src="https://i.redd.it/xscyvcjbdx681.jpg" alt="left-pic">
+<img class="right" src="https://i.redd.it/xscyvcjbdx681.jpg" alt="left">
+
+<h2 class="glitch"  style="font-family: 'Eater', serif; font-weight: 400;">Why So Serious?</h2> <br> <br> <br>
+<div class="clearfix"></div>
+<img class="left" src="https://i.redd.it/xscyvcjbdx681.jpg" alt="left-pic">
+<img class="right" src="https://i.redd.it/xscyvcjbdx681.jpg" alt="left">
+
+
+<H3 class="glitch2" style="font-family: 'Eater', serif; font-weight: 400;">Dr. Joker!</H3>
+
+
+
+
+<P>&nbsp;</P>
+
+<TABLE BORDER="0" CELLSPACING="10" CELLPADDING="0">
+<FORM NAME="e_form" onsubmit="elizaStep();return false">
+<TR><TD COLSPAN="2"><TEXTAREA NAME="e_display" COLS="60" ROWS="20"></TEXTAREA></TD></TR>
+<TR VALIGN="middle">
+	<TD><INPUT TYPE="text" NAME="e_input" SIZE="50"></TD>
+	<TD ALIGN="right"><INPUT TYPE="submit" VALUE="&nbsp;Talk&nbsp;"> <INPUT TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)"></TD>
+</TR>
+</FORM>
+</TABLE>
+
+<img class="left" src="https://i.redd.it/xscyvcjbdx681.jpg" alt="right-pic">
+<img class="right" src="https://i.redd.it/xscyvcjbdx681.jpg" alt="left-pic">
+<div class="clearfix"></div> <!-- Add clearfix to clear the floats -->
+<img class="left" src="https://i.redd.it/xscyvcjbdx681.jpg" alt="right-pic">
+<img class="right" src="https://i.redd.it/xscyvcjbdx681.jpg" alt="left-pic">
+
+
+<footer>
+	<h2> License of Psychiatry:</h2>
+	<p>This license certifies that Dr. Joker is a licensed psychiatrist, specializing in chaos and unpredictability. <br> 
+	
+	<p> State of New York   <br>         
+	 Department of Mental Health <br>
+	 License Number: JKR-80085 <br> 
+	 Issued: February 21, 1981 <br>
+	 Expires: February 21, 3001 <br> 
+	 Dr. Joker, M.D.  <br> 
+	 Specialization: Psychiatry <br> 
+	 Address: 123 Laughing Lane, Gotham City, NY 10001 <br>
+	 Phone: (212) - 911 - 0911 <br>
+	<a>Email: drjoker@gothamhealth.com</a> <br>
+	This license is granted under the conditions and regulations set forth by the State Department of Mental Health of New York. 
+		<p class="sig">Signature: </p> <p class="sign" >  Dr. Joker   </p>   
+
+
+	</p>
+</footer>
+</BODY>
+
+</HTML>
