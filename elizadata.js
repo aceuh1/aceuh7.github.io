@@ -93,7 +93,7 @@ var elizaKeywords = [
   "Discussing your feelings? Why bother? Just shove them deep down—nothing screams 'healthy' like a little emotional constipation!",
   "What does that suggest to you? Think of it as a riddle.",
   "Does discussing this make you feel anything? Maybe something like a punch in the gut, begging for more of that twisted ache?",
-  "That’s interesting. Please continue... or not its your problem HAaHAHAH.",
+  "3",
   "Tell me more, or let’s play a game of silence.",
   "Does talking about this bother you, or does it tickle your fancy? I'll listen and pretend I care!"
   ]]
@@ -459,7 +459,7 @@ var elizaKeywords = [
 "Are you saying no just to be a downer (1)?",
 "You’re being a bit sloppy and negative (1), aren’t you?",
 "Why not dive into the chaos (1)?",
-"Why 'no' (1)? Is that your final answer?"
+"Why 'no' ? Is that your final answer? So boring."
 ]]
 ]],
 ["my", 2, [
